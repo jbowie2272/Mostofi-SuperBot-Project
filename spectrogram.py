@@ -49,6 +49,10 @@ if n_chunks == 0:
 # Pre-allocate per-chunk explained variance (eigenvalue ratios)
 explained_ratios = np.zeros((n_chunks, N), dtype=np.float64)
 
+pcs_90 = np.zeros(n_chunks, dtype=int)
+pcs_95 = np.zeros(n_chunks, dtype=int)
+
+
 def eigen_explained_variance(H):
     """
     Given H (L x N), column-centered, compute R = H^T H,
